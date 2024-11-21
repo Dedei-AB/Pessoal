@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Imagem de Fundo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+            background-size: contain;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alterar Imagem de Fundo</h1>
+        <p>Faça upload de uma nova imagem para definir como fundo.</p>
+        <input type="file" id="uploadImage" accept="image/*">
+    </div>
+
+    <script>
+        document.getElementById('uploadImage').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // Define o background do body com a imagem carregada
+                    document.body.style.backgroundImage = `url('${e.target.result}')`;
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                alert("Por favor, selecione uma imagem válida!");
+            }
+        });
+    </script>
+</body>
+</html>
