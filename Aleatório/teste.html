@@ -1,11 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alterar Imagem de Fundo</title>
+    <title>Sticky Header ao Rolar</title>
+    <script type="module" src="./teste.js" defer></script>
 </head>
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #6ccff6;
+    color: #fffffc;
+    padding: 20px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header a {
+    color: #fffffc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    margin-top: 0;
+    margin-bottom: 100rem;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+</style>
 <body>
-    <input type="checkbox" checked>
+    <header id="header">
+        <h1>Criarte</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="inicio">
+            <h2>Bem-vindo à Criarte</h2>
+            <p>Desça a página para ver o efeito do cabeçalho.</p>
+        </section>
+        <section id="produtos">
+            <h2>Produtos</h2>
+            <p>Explore nossas canecas personalizadas e criativas.</p>
+        </section>
+        <section id="sobre">
+            <h2>Sobre</h2>
+            <p>Conheça nossa história e como começamos.</p>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato para criar algo especial!</p>
+        </section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum possimus natus exercitationem omnis itaque placeat, deserunt quisquam sequi nam animi voluptates iste ratione, unde, ullam voluptatum perspiciatis molestias in obcaecati?</p>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

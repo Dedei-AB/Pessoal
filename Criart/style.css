@@ -1,13 +1,25 @@
 @font-face {
     font-family: "Roboto";
-    src: url(./Dados/RobotoMono-Regular.ttf);
+    src: url(./Dados/Fontes/Quicksand-Bold.ttf);
 }
+:root{
+    --cor-1: #91B9ce;
+    --cor-2: #E3D1B2;
+    --sombra-cor-2: #a99b82;
+    --cor-texto: #001011;
+    --cor-texto2: #01263A;
+    --branco: #fff6e2;
+    --cinza: #757780;
+}
+
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: 0px;
     scroll-behavior: smooth;
     font-family: "Roboto";
+    background-color: var(branco);
+    text-decoration: none;
 }
 
 .container{
@@ -17,10 +29,44 @@
 
 header{
     width: 100vw;
-    height: 4rem;
-    border: 1px solid black;
+    height: 12rem;
+    background-color: var(--cor-2);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+nav{
+    height: 3.5rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header a{
+    color: var(--cor-texto2);
+    height: auto;
+    padding: 1rem;
+}
+
+header a:hover{
+    color: var(--branco);
+}
+
+.pagina{
+    background-color: var(--branco);
+    height: 100vh;
+    width: 100vw;
+    border: 1px solid var(--preto);
+}
+
+#pag1{
+    height: 104vh;
+}
+
+#logo{
+    height: 7rem;
 }
