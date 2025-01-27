@@ -29,7 +29,7 @@
 
 header{
     width: 100vw;
-    height: 12rem;
+    height: auto;
     background-color: var(--cor-2);
     display: flex;
     flex-direction: column;
@@ -37,23 +37,37 @@ header{
     justify-content: space-between;
 }
 
-nav{
-    height: 3.5rem;
+#logo{
+    height: 8rem;
+    padding: .5rem;
+}
+
+#menu{
+    height: 4rem;
     width: 100vw;
+    background-color: var(--cor-2);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: sticky;
+    top: 0px;
 }
 
-header a{
+#logoCaneca{
+    height: 2.3rem;
+    float: left;
+}
+
+nav a{
     color: var(--cor-texto2);
     height: auto;
     padding: 1rem;
+    transition: .2s;
 }
 
-header a:hover{
+nav a:hover{
     color: var(--branco);
+    transition: .2s;
 }
 
 .pagina{
@@ -65,8 +79,4 @@ header a:hover{
 
 #pag1{
     height: 104vh;
-}
-
-#logo{
-    height: 7rem;
 }
