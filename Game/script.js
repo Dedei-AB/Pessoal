@@ -9,6 +9,8 @@ const buttonNo = document.querySelector(".no");
 const buttonYes = document.querySelector(".yes");
 const song = document.getElementById("song");
 const title = document.querySelector("h1");
+const imgHappy = document.getElementById("happy");
+const imgAngry = document.getElementById("angry");
 
 function moveButton() {
   setTimeout(() => {
@@ -21,7 +23,7 @@ function moveButton() {
 
     buttonNo.style.left = `${xPosition}px`;
     buttonNo.style.top = `${yPosition}px`;
-  }, 1000);
+  }, 50);
 }
 
 function clickNoButton() {
@@ -30,7 +32,14 @@ function clickNoButton() {
   song.src = "./choro_de_bebe2.mp3";
   song.play().catch((error) => console.error("Erro ao tocar o som:", error));
   //muda o texto do título e a cor do fundo
-  title.innerHTML = "Chato :(";
+  title.innerHTML = `
+        N queria jogar mesmo
+        <img
+          src="https://w7.pngwing.com/pngs/1016/936/png-transparent-crying-people-child-face-photography-thumbnail.png"
+          alt="pessoa brava"
+          id="angry"
+          style="display: block"
+        />`;
   //tira os botões
   buttonNo.style.display = "none";
   buttonYes.style.display = "none";
@@ -42,10 +51,17 @@ function buttonEba() {
   song.src = "./happy-happy-happy-song.mp3";
   song.play().catch((error) => console.error("Erro ao tocar o som:", error));
   //muda o texto do título e a cor do fundo
-  title.innerHTML = "Ebaaa!!!";
+  title.innerHTML = `
+        Ebaaa!
+        <img
+          src="https://img.cdndsgni.com/preview/12353090.jpg"
+          alt="pessoa muito feliz"
+          id="happy"
+          style="display: block"
+        />`;
   title.style.color = "rgb(71, 66, 88)";
   document.querySelector("body").style.backgroundColor = "rgb(255,255,255)";
-  //tira os botões
+  //tira os botões e aparece imagem
   buttonNo.style.display = "none";
   buttonYes.style.display = "none";
 }
