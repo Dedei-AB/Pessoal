@@ -14,8 +14,13 @@ void numerosPrimos() {
         }
     }
 }
+#include <iostream>
+using namespace std;
 
 int main() {
     numerosPrimos();
+    return 0;
+    cout << "Olá, Mundo!" << endl;
+    system("pause");
     return 0;
 }

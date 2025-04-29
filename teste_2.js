@@ -1,13 +1,29 @@
-function calcularPi(digitos) {
-  let pi = 0;
-  for (let k = 0; k >= 0; k++) {
-    pi +=
-      (1 / Math.pow(16, k)) *
-      (4 / (8 * k + 1) - 2 / (8 * k + 4) - 1 / (8 * k + 5) - 1 / (8 * k + 6));
-  }
-  return pi.toString().slice(0, digitos + 2); // +2 para incluir '3.'
+function equaçãoA(x, y) {
+  let z = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 3)) / Math.abs(x + y);
+  return z;
 }
 
-// Exemplo de uso:
-const resultado = calcularPi(100);
-console.log(resultado);
+function equaçãoB(x, y) {
+  let z = (1 + Math.sin(x)) / (1 + Math.cos(y));
+  return z;
+}
+
+function equaçãoC(x, y) {
+  let z =
+    1 + 1 / x + 1 / Math.pow(x, 2) + 1 / Math.pow(x, 3) + 1 / Math.pow(x, 4);
+  return z;
+}
+
+function equaçãoD(x, y) {
+  let z = x / y - (x + Math.pow(x / y, 2)) / (x - Math.pow(x / y, 2));
+  return z;
+}
+
+function equaçãoE(x, y) {
+  let z = Math.sqrt(
+    Math.PI + Math.pow(Math.E, 3) + Math.sqrt(4 + Math.sqrt(x))
+  );
+  return z;
+}
+
+console.log(equaçãoE(42, 17));
