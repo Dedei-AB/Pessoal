@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cachorro</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .zoom-container {
+        position: relative;
+        width: 10rem;
+        height: 10rem;
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/007/695/510/small/dog-face-icon-dog-mouth-and-nose-happy-smile-cat-face-icon-for-pet-shop-illustration-isolated-on-white-background-vector.jpg");
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      }
+
+      .zoom-lens {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        border: 2px solid rgba(0, 0, 0, 0.4);
+        background-repeat: no-repeat;
+        background-size: 200%;
+        pointer-events: none;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="zoom-container"
+      id="zoom-area"
+      onmousemove="zoom(event)"
+      onmouseenter="showZoom()"
+      onmouseleave="hideZoom()"
+    >
+      <div class="zoom-lens" id="lens"></div>
+    </div>
+
+    <script>
+      const lens = document.getElementById("lens");
+      const container = document.getElementById("zoom-area");
+
+      function zoom(e) {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const lensSize = lens.offsetWidth / 2;
+
+        lens.style.left = x - lensSize + "px";
+        lens.style.top = y - lensSize + "px";
+
+        lens.style.backgroundImage = container.style.backgroundImage;
+        lens.style.backgroundPosition = `-${x * 2 - lensSize}px -${
+          y * 2 - lensSize
+        }px`;
+      }
+
+      function showZoom() {
+        lens.style.display = "block";
+      }
+
+      function hideZoom() {
+        lens.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
