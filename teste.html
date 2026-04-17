@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,10 +13,62 @@
         margin: 0;
         background-color: white;
         display: flex;
+        flex-direction: column; /* Organiza h1 em cima e imagem embaixo */
         align-items: center;
         justify-content: center;
         height: 100vh;
       }
+
+      /* --- ESTILO DA TOOLTIP --- */
+      .tooltip-wrapper {
+        position: absolute;
+        top: 20px;
+        display: inline-block;
+      }
+
+      .titulo {
+        font-family: Arial, sans-serif;
+        color: #000000;
+        margin: 0;
+      }
+
+      .tooltip-box {
+        visibility: hidden;
+        width: 140px;
+        background-color: #c1c1c1; /* Cor fixa que você escolheu */
+        color: #000000;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        z-index: 10;
+        bottom: -40px; /* Aparece logo abaixo do título */
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        white-space: nowrap;
+      }
+
+      /* Seta da tooltip */
+      .tooltip-box::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #c1c1c1 transparent;
+      }
+
+      .tooltip-wrapper:hover .tooltip-box {
+        visibility: visible;
+        opacity: 1;
+      }
+      /* ------------------------- */
 
       .zoom-container {
         position: relative;
@@ -26,6 +78,7 @@
         background-size: cover;
         background-position: center;
         overflow: hidden;
+        margin-top: 50px;
       }
 
       .zoom-lens {
@@ -41,6 +94,11 @@
     </style>
   </head>
   <body>
+    <div class="tooltip-wrapper">
+      <h1 class="titulo">Titulo Teste</h1>
+      <span class="tooltip-box">Titulo fundo branco</span>
+    </div>
+
     <div
       class="zoom-container"
       id="zoom-area"
@@ -65,10 +123,10 @@
         lens.style.left = x - lensSize + "px";
         lens.style.top = y - lensSize + "px";
 
-        lens.style.backgroundImage = container.style.backgroundImage;
-        lens.style.backgroundPosition = `-${x * 2 - lensSize}px -${
-          y * 2 - lensSize
-        }px`;
+        // Pega a imagem do background do container para o zoom
+        const bgImg = getComputedStyle(container).backgroundImage;
+        lens.style.backgroundImage = bgImg;
+        lens.style.backgroundPosition = `-${x * 2 - lensSize}px -${y * 2 - lensSize}px`;
       }
 
       function showZoom() {
